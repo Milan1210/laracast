@@ -17,9 +17,11 @@ class PostController extends Controller
         return view('posts.index',compact('posts'));
     }
 
-    public function show()
+    public function show(Post $post) // Ovaj $post se salje iz rute u fajlu web.php i ima vrednost id-a posta,
     {
-        return view('posts.show');
+        // $post = Post::find($id);
+
+        return view('posts.show',compact('post'));
     }
 
     public function master()
