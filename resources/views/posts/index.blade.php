@@ -8,9 +8,10 @@
     </tr>
     @foreach ($posts as $post)
     <tr>
-      <td>{{$post->title}}</td>
+      <td><a href="post/{{$post->id}}">{{$post->title}}</a></td>
       <td>{{$post->content}}</td>
     </tr>
     @endforeach
   </table>
+  <a href="{{route('post.create')}}" class="btn btn-info">Create</a>
 @endsection

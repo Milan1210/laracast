@@ -31,7 +31,13 @@ class TasksController extends Controller
         return redirect('/tasks/create');
     }
 
-    public function show(Task $tasks){
-        return view('tasks.show')->with('tasks',$tasks);
+    public function show(Task $task){
+        
+        return view('tasks.show',compact('task'));
+    }
+
+    public function test($task){
+        // return view('tasks.show')->with('tasks',$tasks);
+         echo $task;
     }
 }
