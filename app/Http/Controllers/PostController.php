@@ -37,7 +37,7 @@ class PostController extends Controller
     public function store()
     {
         $this->validate(request(), [
-            'title' => 'required|min:10',
+            'title' => 'required',
             'content' => 'required',
         ]);
         // $posts = new Post;

@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>Create new form</h1>
-    <form method="post" action="/posts">
+    <form method="post" action="{{route('questinare.store')}}">
         @csrf
         <div class="form-group">
           <label for="title">Title</label>
