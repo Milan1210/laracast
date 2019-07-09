@@ -2,7 +2,7 @@
   <nav class="nav d-flex justify-content-between">
     <a class="p-2 text-muted" href="{{route('post')}}">Post</a>
     <a class="p-2 text-muted" href="{{route('tasks')}}">Task</a>
-    <a class="p-2 text-muted" href="#">Questionare</a>
+    <a class="p-2 text-muted" href="{{route('questinare')}}">Questionare</a>
     <a class="p-2 text-muted" href="#">Design</a>
     <a class="p-2 text-muted" href="#">Culture</a>
     <a class="p-2 text-muted" href="#">Business</a>
