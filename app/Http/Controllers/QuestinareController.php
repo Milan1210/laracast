@@ -70,7 +70,8 @@ class QuestinareController extends Controller
      */
     public function edit(Questinare $questinare)
     {
-        //
+        return view('questinare.edit')->with('questinare',$questinare);
+        //return $questinare;
     }
 
     /**
@@ -80,9 +81,10 @@ class QuestinareController extends Controller
      * @param  \App\Questinare  $questinare
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Questinare $questinare)
+    public function update($id)
     {
-        //
+        Questinare::find($id)->update(request()->all());
+        return redirect()->route('questinare');
     }
 
     /**
