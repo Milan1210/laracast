@@ -8,7 +8,11 @@ use App\Http\Controllers\QuestinareController;
 //Post 
 Route::get('/',[PostController::class, 'index'])->name('post');
 Route::get('/post/{post}',[PostController::class, 'show']);
+Route::post('/posts/store',[PostController::class, 'store'])->name('posts.store');
 Route::get('/posts/create',[PostController::class, 'create'])->name('post.create');
+Route::get('/posts/{id}/edit',[PostController::class, 'edit'])->name('posts.edit');
+Route::post('/posts/update/{id}',[PostController::class, 'update'])->name('posts.update');
+Route::get('/posts/delete/{id}',[PostController::class, 'delete'])->name('posts.delete');
 Route::get('/master',[PostController::class, 'master']);
 
 Route::post('/posts',[PostController::class,'store']);

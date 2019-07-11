@@ -24,6 +24,28 @@ class PostController extends Controller
         return view('posts.show',compact('post'));
     }
 
+    public function edit($id)
+    {
+        $posts = Post::find($id);
+        return view('posts.edit',compact('posts'));
+        // echo $id;
+    }
+
+    public function update(Request $req)
+    {
+        Post::find($req['idp'])->update($req->all());
+        
+         //print_r($req->all());
+    }
+
+    public function delete($id)
+    {
+        Post::find($id)->delete();
+        //echo $id;
+         //print_r($req->all());
+         return redirect()->route('post');
+    }
+
     public function master()
     {
         return view('layouts.master');
