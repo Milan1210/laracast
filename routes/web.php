@@ -19,13 +19,18 @@ Route::post('/posts',[PostController::class,'store']);
 
 //Task
 Route::get('/tasks',[TasksController::class,'index'])->name('tasks');
-Route::get('/tasks/{task}',[TasksController::class,'show'])->name('task.show');
-Route::get('/tasks/create',[TasksController::class,'create']);
+Route::get('/task/show/{task}',[TasksController::class,'show'])->name('task.show');
+Route::get('/task/{id}/edit',[TasksController::class,'edit'])->name('task.edit');
+Route::post('/task/{id}/update',[TasksController::class,'update'])->name('task.update');
+Route::get('/task/create',[TasksController::class,'create'])->name('task.create');
 Route::post('/tasks/store',[TasksController::class,'store']);
 
 //Questionare
 Route::get('/questionare', [QuestinareController::class,'index'])->name('questinare');
 Route::get('/questinare/create', [QuestinareController::class,'create'])->name('questinare.create');
-Route::get('/questinare/{questinare}', [QuestinareController::class,'show'])->name('questinare.show');
+Route::get('/questinare/{questinare}/show', [QuestinareController::class,'show'])->name('questinare.show');
+Route::get('/questinare/{questinare}/edit', [QuestinareController::class,'edit'])->name('questinare.edit');
+Route::post('/questinare/{id}/updates', [QuestinareController::class,'update'])->name('questinare.update');
+Route::get('/questinare/{questinare}/delete', [QuestinareController::class,'delete'])->name('questinare.delete');
 Route::post('/questinare/store', [QuestinareController::class,'store'])->name('questinare.store');
 

@@ -23,12 +23,27 @@ class TasksController extends Controller
         //         'content'=>$request->content,
         //     ]
         // );
+
         $tasks = new Task;
         $tasks->title = $request->title;
         $tasks->content = $request->content;
         $tasks->save();
         
-        return redirect('/tasks/create');
+        return redirect(route('tasks'));
+    }
+
+    public function edit($id)
+    {
+        $task = Task::find($id);
+        return view('tasks.edit')->with('task',$task);
+    }
+
+    public function update($id)
+    {
+        Task::find($id)->update(request()->all());
+        // $task = Task::find($id);
+        return redirect()->route('tasks');
+        
     }
 
     public function show(Task $task){
