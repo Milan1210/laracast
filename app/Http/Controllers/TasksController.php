@@ -16,6 +16,11 @@ class TasksController extends Controller
         return view('tasks.create');
     }
 
+    public function coment($idTask)
+    {
+         return view('tasks.coment')->with('id',$idTask);
+    }
+
     public function store(Request $request){
         // Task::create(
         //     [

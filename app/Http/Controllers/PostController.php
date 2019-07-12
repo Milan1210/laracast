@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Post;
+use App\Coment;
 
 class PostController extends Controller
 {
@@ -44,6 +45,12 @@ class PostController extends Controller
         //echo $id;
          //print_r($req->all());
          return redirect()->route('post');
+    }
+
+    public function deleteComent($id)
+    {
+        Coment::find($id)->delete();
+        return redirect()->back();
     }
 
     public function master()
