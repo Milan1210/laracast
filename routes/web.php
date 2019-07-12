@@ -4,6 +4,7 @@ use App\Task;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\TasksController;
 use App\Http\Controllers\QuestinareController;
+use App\Http\Controllers\CommentController;
 
 //Post 
 Route::get('/',[PostController::class, 'index'])->name('post');
@@ -33,4 +34,9 @@ Route::get('/questinare/{questinare}/edit', [QuestinareController::class,'edit']
 Route::post('/questinare/{id}/updates', [QuestinareController::class,'update'])->name('questinare.update');
 Route::get('/questinare/{questinare}/delete', [QuestinareController::class,'delete'])->name('questinare.delete');
 Route::post('/questinare/store', [QuestinareController::class,'store'])->name('questinare.store');
+
+
+//Comment
+Route::get('/coment/{id}/create',[CommentController::class,'create'])->name('comment.create');
+Route::post('/coment/{id}/store',[CommentController::class,'store'])->name('comment.store');
 

@@ -7,6 +7,7 @@
       <th>COntent</th>
       <th>Edit</th>
       <th>Delete</th>
+      <th>Comment</th>
     </tr>
     @foreach ($posts as $post)
     <tr>
@@ -14,6 +15,7 @@
       <td>{{$post->content}}</td>
       <td><a href="{{route('posts.edit',$post->id)}}" class="btn btn-success">Edit</a></td>
       <td><a href="{{route('posts.delete',$post->id)}}" class="btn btn-danger">Delete</a></td>
+      <td><a href="{{route('comment.create',$post->id)}}" class="btn btn-primary">Coment</a></td>
     </tr>
     @endforeach
   </table>
