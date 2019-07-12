@@ -11,6 +11,11 @@
             <label for="content">Content</label>
             <textarea name="content" id="content" cols="30" rows="10" class="form-control">{{$questinare->content}}</textarea>
         </div>
+        <select name="task" id="" class="form-control">
+            @foreach ($tasks as $task)
+                <option value="{{$task->id}}" selected>{{$select->title}}</option>
+            @endforeach
+        </select>
         <input type="submit" value="Send" class="btn btn-success">
     </form>
     @include('layouts.errors')

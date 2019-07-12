@@ -17,6 +17,7 @@ class CreateQuestinaresTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->text('content');
+            $table->integer('task_id');
             $table->timestamps();
         });
     }

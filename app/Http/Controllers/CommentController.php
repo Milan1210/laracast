@@ -21,5 +21,11 @@ class CommentController extends Controller
         return redirect()->route('post');
     }
 
+    public function addComentTask(Request $request,$idTask)
+    {
+        Coment::create(['comment'=>$request->coment,'task_id'=>$idTask]);
+        
+        return redirect()->route('tasks');
+    }
    
 }

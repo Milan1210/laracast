@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Questinare;
+use App\Task;
 use Illuminate\Http\Request;
 
 class QuestinareController extends Controller
@@ -25,7 +26,8 @@ class QuestinareController extends Controller
      */
     public function create()
     {
-        return view('questinare.create');
+        $tasks = Task::all();
+        return view('questinare.create')->with('tasks',$tasks);
     }
 
     /**
@@ -43,6 +45,7 @@ class QuestinareController extends Controller
         Questinare::create([
             'title'=>$request->title,
             'content'=>$request->content,
+            'task_id'=>$request->task,
         ]);
 
         return redirect(Route('questinare'));
@@ -69,9 +72,11 @@ class QuestinareController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Questinare $questinare)
-    {
-        return view('questinare.edit')->with('questinare',$questinare);
-        //return $questinare;
+    {   
+        $tasks = Task::all();
+        $selected = Task::find($questinare->task_id);
+        return view('questinare.edit')->with(['questinare'=>$questinare,'tasks'=>$tasks,'select'=>$selected]);
+        //return $selected;
     }
 
     /**

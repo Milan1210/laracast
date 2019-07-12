@@ -14,6 +14,7 @@ Route::get('/posts/create',[PostController::class, 'create'])->name('post.create
 Route::get('/posts/{id}/edit',[PostController::class, 'edit'])->name('posts.edit');
 Route::post('/posts/update/{id}',[PostController::class, 'update'])->name('posts.update');
 Route::get('/posts/delete/{id}',[PostController::class, 'delete'])->name('posts.delete');
+Route::get('/coment/delete/{id}',[PostController::class, 'deleteComent'])->name('coment.delete');
 Route::get('/master',[PostController::class, 'master']);
 
 Route::post('/posts',[PostController::class,'store']);
@@ -39,4 +40,7 @@ Route::post('/questinare/store', [QuestinareController::class,'store'])->name('q
 //Comment
 Route::get('/coment/{id}/create',[CommentController::class,'create'])->name('comment.create');
 Route::post('/coment/{id}/store',[CommentController::class,'store'])->name('comment.store');
+
+Route::get('/task/{id}/coment',[TasksController::class,'coment'])->name('task.coment');
+Route::post('/task/addcoment/{idTask}',[CommentController::class,'addComentTask'])->name('addcoment');
 
