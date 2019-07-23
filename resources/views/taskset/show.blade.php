@@ -2,7 +2,9 @@
 
 @section('content')
     <h1>{{$taskset->title}}</h1>
-    <small>{{$taskset->coment['body']}}</small>
+    @foreach ($taskset->coment as $com)
+        {{$com->body}}<br>
+    @endforeach
 @endsection
 
 @section('table')

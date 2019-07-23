@@ -10,6 +10,6 @@ class Taskset extends Model
 
     public function coment()
     {
-        return $this->hasOne(Comment::class);
+        return $this->hasMany(Comment::class);
     }
 }
